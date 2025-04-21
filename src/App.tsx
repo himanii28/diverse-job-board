@@ -10,6 +10,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import Companies from "./pages/Companies";
 import Jobs from "./pages/Jobs";
 import JobDetail from "./pages/JobDetail";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const queryClient = new QueryClient();
 
@@ -19,20 +20,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen flex w-full bg-gray-50">
-          <AppSidebar />
-          <main className="flex-1 ml-0 px-2 sm:px-6">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/companies" element={<Companies />} />
-              <Route path="/companies/:id" element={<Jobs />} />
-              <Route path="/jobs" element={<Jobs />} />
-              <Route path="/jobs/:id" element={<JobDetail />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-        </div>
+        <SidebarProvider>
+          <div className="min-h-screen flex w-full bg-gray-50">
+            <AppSidebar />
+            <main className="flex-1 ml-0 px-2 sm:px-6">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/companies" element={<Companies />} />
+                <Route path="/companies/:id" element={<Jobs />} />
+                <Route path="/jobs" element={<Jobs />} />
+                <Route path="/jobs/:id" element={<JobDetail />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+          </div>
+        </SidebarProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

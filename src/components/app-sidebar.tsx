@@ -12,7 +12,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { briefcase, building, search, users } from "lucide-react";
+import { Briefcase, Building, Search, Users } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export function AppSidebar() {
@@ -27,7 +27,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link to="/" className={location.pathname === "/" ? "font-semibold text-primary" : ""}>
-                    <span className="mr-2"><briefcase size={20} /></span>
+                    <span className="mr-2"><Briefcase size={20} /></span>
                     Jobs
                   </Link>
                 </SidebarMenuButton>
@@ -35,7 +35,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link to="/companies" className={location.pathname.startsWith("/companies") ? "font-semibold text-primary" : ""}>
-                    <span className="mr-2"><building size={20} /></span>
+                    <span className="mr-2"><Building size={20} /></span>
                     Companies
                   </Link>
                 </SidebarMenuButton>
@@ -43,7 +43,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link to="/jobs" className={location.pathname.startsWith("/jobs") ? "font-semibold text-primary" : ""}>
-                    <span className="mr-2"><search size={20} /></span>
+                    <span className="mr-2"><Search size={20} /></span>
                     Browse Jobs
                   </Link>
                 </SidebarMenuButton>
@@ -51,7 +51,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">
-                    <span className="mr-2"><users size={20} /></span>
+                    <span className="mr-2"><Users size={20} /></span>
                     About
                   </a>
                 </SidebarMenuButton>

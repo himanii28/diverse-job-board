@@ -3,7 +3,7 @@ import FeaturedJobs from "@/components/FeaturedJobs";
 import FeaturedCompanies from "@/components/FeaturedCompanies";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { search } from "lucide-react";
+import { Search } from "lucide-react";
 
 const Index = () => {
   const [query, setQuery] = useState("");
@@ -28,7 +28,7 @@ const Index = () => {
           Apply for diverse jobs across sectors — Technology, Healthcare, Finance, and more.
         </p>
         <form className="flex max-w-2xl mx-auto items-center gap-2 bg-white rounded-full shadow px-4 py-2 mb-10" onSubmit={handleSearch}>
-          <search size={20} className="text-gray-400" />
+          <Search size={20} className="text-gray-400" />
           <input 
             className="flex-1 outline-none border-none bg-transparent px-2 py-1 text-base"
             placeholder="Search jobs or companies..."

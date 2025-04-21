@@ -1,30 +1,32 @@
 
 import { Company } from "@/types/demoData";
-import { building } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Building } from "lucide-react";
 
 type Props = {
   company: Company;
 };
 
-const CompanyCard = ({ company }: Props) => (
-  <div className="bg-white rounded-xl shadow hover:shadow-lg p-6 transition group flex flex-col items-center text-center">
-    <img
-      src={company.logo}
-      alt={company.name}
-      className="w-16 h-16 rounded-full object-cover border mb-2 group-hover:scale-105 transition"
-      loading="lazy"
-    />
-    <h3 className="font-bold text-lg mb-1">{company.name}</h3>
-    <div className="text-xs flex items-center gap-1 text-primary mb-1">
-      <building size={14} />
-      <span>{company.sector}</span>
-    </div>
-    <p className="mb-2 text-gray-600 text-sm">{company.description}</p>
-    <Link to={`/companies/${company.id}`}>
-      <button className="bg-primary text-white rounded-md px-4 py-1.5 text-sm hover:bg-primary/90 transition">View Jobs</button>
+const CompanyCard = ({ company }: Props) => {
+  return (
+    <Link
+      to={`/companies/${company.id}`}
+      className="bg-white rounded-xl shadow hover:shadow-lg p-5 transition flex flex-col"
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <img src={company.logo} alt={company.name} className="w-10 h-10 rounded-full object-cover border" />
+        <h3 className="text-xl font-bold">{company.name}</h3>
+      </div>
+      <div className="text-xs text-gray-500 flex items-center gap-1 mb-2">
+        <Building size={14} />
+        <span>{company.location}</span>
+      </div>
+      <p className="text-gray-600 text-sm mb-3">{company.description.slice(0, 80)}...</p>
+      <div className="mt-auto text-xs text-gray-500">
+        {company.jobCount} open positions
+      </div>
     </Link>
-  </div>
-);
+  );
+};
 
 export default CompanyCard;
