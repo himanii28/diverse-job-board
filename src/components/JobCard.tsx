@@ -1,6 +1,6 @@
 
 import { Job, Company, getCompanyById } from "@/types/demoData";
-import { briefcase, building, arrow-right } from "lucide-react";
+import { Briefcase, Building, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -18,9 +18,9 @@ const JobCard = ({ job }: Props) => {
       </div>
       <h3 className="text-lg font-bold">{job.title}</h3>
       <div className="text-xs text-gray-500 flex items-center gap-2 mb-2">
-        <briefcase size={14} />
+        <Briefcase size={14} />
         <span>{job.type}</span>
-        <building size={14} />
+        <Building size={14} />
         <span>{job.sector}</span>
         <span>•</span>
         <span>{job.location}</span>
@@ -28,7 +28,7 @@ const JobCard = ({ job }: Props) => {
       <p className="text-gray-600 text-sm flex-1">{job.description.slice(0, 60)}...</p>
       <Link to={`/jobs/${job.id}`} className="mt-4">
         <button className="w-full bg-primary text-white rounded-md px-4 py-1.5 text-sm flex items-center justify-center gap-1 hover:bg-primary/90 transition group">
-          View Details <arrow-right size={16} />
+          View Details <ArrowRight size={16} />
         </button>
       </Link>
     </div>
@@ -36,3 +36,4 @@ const JobCard = ({ job }: Props) => {
 };
 
 export default JobCard;
+
