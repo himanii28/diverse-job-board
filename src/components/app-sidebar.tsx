@@ -12,7 +12,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Briefcase, Building, Search, Users } from "lucide-react";
+import { Briefcase, Building, Search, Users, LogIn, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export function AppSidebar() {
@@ -48,12 +48,27 @@ export function AppSidebar() {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Account</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">
-                    <span className="mr-2"><Users size={20} /></span>
-                    About
-                  </a>
+                  <Link to="/login" className={location.pathname === "/login" ? "font-semibold text-primary" : ""}>
+                    <span className="mr-2"><LogIn size={20} /></span>
+                    Login
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link to="/signup" className={location.pathname === "/signup" ? "font-semibold text-primary" : ""}>
+                    <span className="mr-2"><User size={20} /></span>
+                    Sign Up
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

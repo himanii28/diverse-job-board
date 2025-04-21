@@ -19,12 +19,9 @@ const CompanyCard = ({ company }: Props) => {
       </div>
       <div className="text-xs text-gray-500 flex items-center gap-1 mb-2">
         <Building size={14} />
-        <span>{company.location}</span>
+        <span>{company.sector}</span>
       </div>
       <p className="text-gray-600 text-sm mb-3">{company.description.slice(0, 80)}...</p>
-      <div className="mt-auto text-xs text-gray-500">
-        {company.jobCount} open positions
-      </div>
     </Link>
   );
 };
